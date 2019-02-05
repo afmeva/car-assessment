@@ -7,7 +7,7 @@ import { CompareCarsComponent } from "./pages/compare-cars/compare-cars.componen
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
-  { path: "details", component: DetailsComponent },
+  { path: "details/:id", component: DetailsComponent },
   { path: "compare", component: CompareCarsComponent }
 ];
 

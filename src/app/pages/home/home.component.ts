@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CarsService } from '../../core/services/cars.service';
+import { Observable } from 'rxjs/Observable';
+import { Car } from '../../core/models/car.model';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  cars: Observable<Car[]>
+  constructor(private carsService: CarsService) { }
 
   ngOnInit() {
+    this.cars = this.carsService.getData();
   }
-
 }

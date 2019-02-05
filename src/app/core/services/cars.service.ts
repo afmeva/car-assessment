@@ -23,10 +23,14 @@ export class CarsService {
           return carsData;
         }
         return carsData.filter(
-          ({ brand }) => term.toLowerCase() === brand.toLocaleLowerCase()
+          ({ brand }) => term.toLowerCase() === brand.toLowerCase()
         );
       })
     );
+  }
+
+  getData() {
+    return this.carsData;
   }
 
   setTerm(term = "") {
