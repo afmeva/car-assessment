@@ -5,6 +5,7 @@ import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import { withLatestFrom } from "rxjs/operators/withLatestFrom";
 import { map } from "rxjs/operators/map";
 import { CarsAPIService } from "../../core/services/cars-api.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-home",
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
   filterTerm: BehaviorSubject<string>;
   term: string;
 
-  constructor(private carApi: CarsAPIService) {}
+  constructor(private carApi: CarsAPIService, private router: Router) {}
 
   ngOnInit() {
     this.filterTerm = new BehaviorSubject("");
@@ -32,14 +33,11 @@ export class HomeComponent implements OnInit {
         );
       })
     );
+
+    this.router.navigate(['/compare'], { queryParams: { filter: ["1", "2", "3"]}});
   }
 
   onInput(event: Event) {
     this.filterTerm.next((<HTMLInputElement>event.target).value)
-  }
-  onSubmit(event: Event) {
-    event.preventDefault();
-
-    this.filterTerm.next(this.term)
   }
 }
