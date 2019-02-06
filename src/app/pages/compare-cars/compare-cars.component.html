@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
 
-<div class="container mt-5 mb-3">
-  <div class="row">
-    <div class="col" *ngFor="let car of carsToCompare | async">
+<div class="compare-container container-fluid mt-5 mb-3">
+  <div class="row compare__car-wrap">
+    <div class="col compare__car" *ngFor="let car of carsToCompare | async">
         <app-car-details [car]="car"></app-car-details>
     </div>
   </div>

@@ -1,4 +1,4 @@
-<a href="/details/{{car.id}}" class="card car-box h-100 link-unstyled">
+<a routerLink="/details/{{car.id}}" class="card car-box h-100 link-unstyled">
   <img
     [src]="car.images?.small"
     class="card-img-top"
@@ -6,26 +6,25 @@
   />
   <div class="card-body d-flex flex-column">
     <div class="card-text row flex-grow-1">
-      <p class="m-0 p-1 col text-truncate">
+      <p class="float-left w-50 m-0 p-1 text-truncate">
         <small class="d-block text-muted">
           Model:
         </small>
         {{ car.model }}
       </p>
-      <p class="m-0 p-1 col">
+      <p class="float-left w-50 m-0 p-1">
         <small class="d-block text-muted">
           Brand:
         </small>
         {{ car.brand }}
       </p>
-      <span class="w-100"></span>
-      <p class="m-0 p-1 col">
+      <p class="float-left w-50 m-0 p-1">
         <small class="d-block text-muted">
           Year:
         </small>
         {{ car.year }}
       </p>
-      <p class="m-0 p-1 col">
+      <p class="float-left w-50 m-0 p-1">
         <small class="d-block text-muted">
           Price:
         </small>

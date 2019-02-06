@@ -1,0 +1,16 @@
+.compare-container {
+  overflow: auto;
+}
+
+.compare {
+  &__car-wrap {
+    flex-wrap: nowrap;
+  }
+
+  &__car {
+    @media screen and (max-width:576px){
+      flex-shrink: 0;
+      flex-basis: 80%
+    }
+  }
+}

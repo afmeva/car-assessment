@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       })
     );
 
-    this.router.navigate(['/compare'], { queryParams: { filter: ["1", "2", "3"]}});
+    // this.router.navigate(['/compare'], { queryParams: { filter: ["1", "2", "3"]}});
   }
 
   onInput(event: Event) {
