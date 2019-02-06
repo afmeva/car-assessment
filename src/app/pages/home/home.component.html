@@ -6,19 +6,32 @@
     </p>
   </div>
 </div>
-<div class="home-container container-fluid ">
-  <div class="row justify-content-center">
-    <form class="col-12 mt-2 mb-5 form-inline align-items-end" (submit)="onSubmit($event)">
-      <div class="form-group mr-3 mb-0">
-        <label class="mr-2" for="term">Filter by brand: </label>
-        <input id="term" name="term" class="form-control" type="text" placeholder="type brand... Ex: Pontiac" [(ngModel)]="term">
-      </div>
-      <button type="submit" class="btn btn-primary mt-2">Search</button>
-    </form>
+<div class="home-container container-fluid mt-5">
+  <div class="form-group row ">
+    <label class="col-sm-2 col-form-label" for="term">Filter by brand: </label>
+    <div class="col-sm-10">
+      <input
+        id="term"
+        name="term"
+        class="form-control"
+        type="text"
+        placeholder="type brand... Ex: Pontiac"
+        (input)="onInput($event)"
+      />
+    </div>
   </div>
-  <div class="row">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2" *ngFor="let car of cars | async">
+  <div class="row mt-5">
+    <div
+      class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5"
+      *ngFor="let car of (cars | async)"
+    >
       <app-car-box [car]="car"></app-car-box>
+    </div>
+
+    <div class="col-12" *ngIf="!(cars | async)?.length">
+      <div class="alert alert-warning" role="alert">
+       No results for that brand. Try typing something else.
+      </div>
     </div>
   </div>
 </div>
