@@ -21,7 +21,7 @@ const carData: Car[] = [
     id: "38e87c73-1dfe-4f81-9dcc-cf54fc92dce5",
     images: {
       small: "http://dummyimage.com/200x200.jpg/ff4444/ffffff",
-      big: "http://dummyimage.com/500x500.jpg/cc0000/ffffff"
+      big: "http://dummyimage.com/500x200.jpg/cc0000/ffffff"
     },
     model: "626",
     year: 1985,
@@ -42,7 +42,7 @@ const carData: Car[] = [
     id: "056b2864-b1da-48f2-a4bc-337d24483c98",
     images: {
       small: "http://dummyimage.com/200x200.jpg/ff4444/ffffff",
-      big: "http://dummyimage.com/500x500.jpg/ff4444/ffffff"
+      big: "http://dummyimage.com/500x200.jpg/ff4444/ffffff"
     },
     model: "Trans Sport",
     year: 1994,
@@ -95,7 +95,7 @@ const carData: Car[] = [
     id: "98c43d28-59e2-4d81-865d-87a11924fcbe",
     images: {
       small: "http://dummyimage.com/200x200.jpg/dddddd/000000",
-      big: "http://dummyimage.com/500x500.jpg/dddddd/000000"
+      big: "http://dummyimage.com/500x200.jpg/dddddd/000000"
     },
     model: "Cooper Clubman",
     year: 2010,
@@ -132,7 +132,7 @@ const carData: Car[] = [
     id: "6956c265-8a8a-4467-a77c-a4271ba248ee",
     images: {
       small: "http://dummyimage.com/200x200.jpg/5fa2dd/ffffff",
-      big: "http://dummyimage.com/500x500.jpg/ff4444/ffffff"
+      big: "http://dummyimage.com/500x200.jpg/ff4444/ffffff"
     },
     model: "Caprice",
     year: 1977,
@@ -177,7 +177,7 @@ const carData: Car[] = [
     id: "1baed889-8416-4765-aea6-ee3bf37c1b98",
     images: {
       small: "http://dummyimage.com/200x200.jpg/5fa2dd/ffffff",
-      big: "http://dummyimage.com/500x500.jpg/cc0000/ffffff"
+      big: "http://dummyimage.com/500x200.jpg/cc0000/ffffff"
     },
     model: "Wrangler",
     year: 2009,
@@ -198,7 +198,7 @@ const carData: Car[] = [
     id: "d89c75d7-7dd5-4e2f-9799-ad27b2141b28",
     images: {
       small: "http://dummyimage.com/200x200.jpg/5fa2dd/ffffff",
-      big: "http://dummyimage.com/500x500.jpg/5fa2dd/ffffff"
+      big: "http://dummyimage.com/500x200.jpg/5fa2dd/ffffff"
     },
     model: "3000GT",
     year: 1996,
@@ -231,7 +231,7 @@ const carData: Car[] = [
     id: "d715e8d5-18b6-4550-b79f-899694eff07d",
     images: {
       small: "http://dummyimage.com/200x200.jpg/cc0000/ffffff",
-      big: "http://dummyimage.com/500x500.jpg/cc0000/ffffff"
+      big: "http://dummyimage.com/500x200.jpg/cc0000/ffffff"
     },
     model: "Touareg",
     year: 2006,
@@ -276,7 +276,7 @@ const carData: Car[] = [
     id: "bd9d244f-793a-45e4-96f8-7dddc0ec62ef",
     images: {
       small: "http://dummyimage.com/200x200.jpg/ff4444/ffffff",
-      big: "http://dummyimage.com/500x500.jpg/dddddd/000000"
+      big: "http://dummyimage.com/500x200.jpg/dddddd/000000"
     },
     model: "E-Series",
     year: 1986,
@@ -309,7 +309,7 @@ const carData: Car[] = [
     id: "0c8be33a-8111-4536-8ed3-015c1bd22e25",
     images: {
       small: "http://dummyimage.com/200x200.jpg/cc0000/ffffff",
-      big: "http://dummyimage.com/500x500.jpg/5fa2dd/ffffff"
+      big: "http://dummyimage.com/500x200.jpg/5fa2dd/ffffff"
     },
     model: "Envoy XUV",
     year: 2005,
@@ -342,7 +342,7 @@ const carData: Car[] = [
     id: "5c40db04-004d-48d6-95a4-779801267407",
     images: {
       small: "http://dummyimage.com/200x200.jpg/dddddd/000000",
-      big: "http://dummyimage.com/500x500.jpg/5fa2dd/ffffff"
+      big: "http://dummyimage.com/500x200.jpg/5fa2dd/ffffff"
     },
     model: "FX",
     year: 2003,

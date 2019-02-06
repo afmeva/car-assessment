@@ -4,11 +4,12 @@ import { CarsService } from "./services/cars.service";
 import { CarsAPIService } from "./services/cars-api.service";
 import { CarBoxComponent } from './components/car-box/car-box.component';
 import { BrowserModule } from "@angular/platform-browser";
+import { CarDetailsComponent } from './components/car-details/car-details.component';
 
 @NgModule({
   imports: [BrowserModule],
-  declarations: [CarBoxComponent],
+  declarations: [CarBoxComponent, CarDetailsComponent],
   providers: [CarsAPIService, CarsService],
-  exports: [CarBoxComponent]
+  exports: [CarBoxComponent, CarDetailsComponent]
 })
 export class CoreModule {}
