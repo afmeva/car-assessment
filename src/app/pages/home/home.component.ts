@@ -10,9 +10,17 @@ import { Car } from '../../core/models/car.model';
 })
 export class HomeComponent implements OnInit {
   cars: Observable<Car[]>
+  term: string;
+  
   constructor(private carsService: CarsService) { }
 
   ngOnInit() {
     this.cars = this.carsService.getData();
+  }
+
+  onSubmit(event:Event) {
+    event.preventDefault();
+  
+    this.carsService.setTerm(this.term);
   }
 }
