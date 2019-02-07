@@ -30,7 +30,7 @@ describe("DetailsComponent", () => {
       declarations: [
         DetailsComponent,
         NavbarStubComponent,
-        CarDetailsStubComponent
+        CarDetailsStubComponent,
       ],
       providers: [
         {

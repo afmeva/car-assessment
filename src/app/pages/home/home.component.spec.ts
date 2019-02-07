@@ -4,6 +4,7 @@ import { HomeComponent } from "./home.component";
 import { CarsAPIService } from "../../core/services/cars-api.service";
 import { Observable } from "rxjs/Observable";
 import { Component, Input } from "@angular/core";
+import { RouterTestingModule } from "@angular/router/testing";
 
 describe("HomeComponent", () => {
   let component: HomeComponent;
@@ -61,10 +62,12 @@ describe("HomeComponent", () => {
   })
   class CarBoxStubComponent {
     @Input() car;
+    @Input() isAdded;
   }
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports:[RouterTestingModule],
       declarations: [HomeComponent, CarBoxStubComponent],
       providers: [
         {

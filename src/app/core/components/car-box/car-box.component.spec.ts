@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CarBoxComponent } from './car-box.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CarBoxComponent', () => {
   let component: CarBoxComponent;
@@ -8,7 +9,8 @@ describe('CarBoxComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CarBoxComponent ]
+      imports: [RouterTestingModule],
+      declarations: [CarBoxComponent ]
     })
     .compileComponents();
   }));
@@ -22,4 +24,8 @@ describe('CarBoxComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it("should emit addToCompare event when buttons are clicked", () => {
+
+  })
 });
