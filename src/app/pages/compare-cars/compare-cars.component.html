@@ -1,9 +1,17 @@
 <app-navbar></app-navbar>
 
 <div class="compare-container container-fluid mt-5 mb-3">
-  <div class="row compare__car-wrap">
-    <div class="col compare__car" *ngFor="let car of carsToCompare | async">
-        <app-car-details [car]="car"></app-car-details>
+  <div class="row">
+    <div class="col">
+      <a routerLink="/home" class="btn btn-outline-secondary">Back</a>
+    </div>
+  </div>
+  <div class="row compare__car-wrap mt-3">
+    <div
+      class="col-sm-4 float-left compare__car"
+      *ngFor="let car of (carsToCompare | async)"
+    >
+      <app-car-details [car]="car"></app-car-details>
     </div>
   </div>
 </div>

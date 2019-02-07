@@ -1,11 +1,12 @@
 .car-box {
+  display: block;
   transition: 0.5s transform cubic-bezier(0.075, 0.82, 0.165, 1);
 
   &:hover {
     @media screen and (min-width: 1024px){
       border: 1px solid #6c757d;
-      transform: scale(1.1);
-      z-index: 100;
+      transform: scale(1.01);
+      z-index: 1;
     }
   }
 }

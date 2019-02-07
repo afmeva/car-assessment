@@ -1,12 +1,12 @@
 <div class="jumbotron jumbotron-fluid bg-info text-white">
   <div class="container-fluid">
-    <h1 class="display-2 font-weight-bold">Dream Car</h1>
+    <h1 class="display-3  font-weight-bold">Dream Car</h1>
     <p class="lead">
       The most amazing place to find the car of your dreams.
     </p>
   </div>
 </div>
-<div class="home-container container-fluid mt-5">
+<div class="home-container container-fluid">
   <div class="form-group row ">
     <label class="col-sm-2 col-form-label" for="term">Filter by brand: </label>
     <div class="col-sm-10">
@@ -25,12 +25,50 @@
       class="float-left col-12 col-sm-6 col-md-4 col-lg-3 mb-5"
       *ngFor="let car of (cars | async)"
     >
-      <app-car-box [car]="car"></app-car-box>
+      <app-car-box
+        [car]="car"
+        (addToCompare)="onAddToCompare(car)"
+        [isAdded]="!isAdded(car)"
+      ></app-car-box>
     </div>
 
     <div class="col-12" *ngIf="!(cars | async)?.length">
       <div class="alert alert-warning" role="alert">
-       No results for that brand. Try typing something else.
+        No results for that brand. Try typing something else.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="compared-cars w-100 bg-light py-2"
+  *ngIf="carsToCompare.length"
+>
+  <div class="compared-container container-fluid">
+    <div class="row clearfix">
+      <div class="float-left col-12 col-sm-4 mt-1" *ngFor="let car of carsToCompare">
+        <div class="text-center bg-secondary py-1 px-1 text-white">
+          {{ car.model }}
+          <button
+            type="button"
+            class="compared-cars__btn-remove close text-white"
+            (click)="onAddToCompare(car)"
+          >
+            &times;
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mt-2 text-center">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="goToCompare()"
+          [disabled]="carsToCompare.length == 1"
+        >
+          compare
+        </button>
       </div>
     </div>
   </div>

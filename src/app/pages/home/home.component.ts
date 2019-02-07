@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   cars: Observable<Car[]>;
   filterTerm: BehaviorSubject<string>;
   term: string;
+  _carsToCompare = {} as Car;
 
   constructor(private carApi: CarsAPIService, private router: Router) {}
 
@@ -28,16 +29,37 @@ export class HomeComponent implements OnInit {
         if (!term) {
           return carsData;
         }
-        return carsData.filter(
-          ({ brand }) => brand.toLowerCase().includes(term.toLowerCase())
+        return carsData.filter(({ brand }) =>
+          brand.toLowerCase().includes(term.toLowerCase())
         );
       })
     );
+  }
 
-    // this.router.navigate(['/compare'], { queryParams: { filter: ["1", "2", "3"]}});
+  setCarsToCompare(car: Car) {
+    if (this.isAdded(car)) {
+      delete this._carsToCompare[car.id];
+    } else if(Object.keys(this._carsToCompare).length < 3) {
+      this._carsToCompare[car.id] = car;
+    }
+  }
+  isAdded(car) {
+    return Boolean(this._carsToCompare[car.id]);
+  }
+
+  get carsToCompare(): Car[] {
+    return Object.values(this._carsToCompare);
+  }
+
+  onAddToCompare(car: Car) {
+    this.setCarsToCompare(car)
   }
 
   onInput(event: Event) {
-    this.filterTerm.next((<HTMLInputElement>event.target).value)
+    this.filterTerm.next((<HTMLInputElement>event.target).value);
+  }
+
+  goToCompare() {
+    this.router.navigate(['/compare'], { queryParams: { cars: Object.keys(this._carsToCompare)}});
   }
 }

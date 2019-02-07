@@ -1,3 +1,21 @@
 .home-container {
   max-width: 1200px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.compared-cars {
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+
+  &__btn-remove {
+    line-height: 19px;
+  }
+}
+
+.compared-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }

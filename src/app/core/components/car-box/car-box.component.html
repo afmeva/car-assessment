@@ -31,6 +31,7 @@
         {{ car.price | currency}}
       </p>
     </div>
-    <button class="btn btn-primary mt-2">Add to compare</button>
+    <button class="btn btn-primary mt-2" (click)="onAddToCompare($event)" *ngIf="isAdded">Add to compare</button>
+    <button class="btn btn-outline-primary mt-2" (click)="onAddToCompare($event)" *ngIf="!isAdded">Remove from compare</button>
   </div>
 </a>
