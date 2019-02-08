@@ -4,7 +4,6 @@ import { Observable } from "rxjs/Observable";
 import { Car } from "../models/car.model";
 import { Injectable } from "@angular/core";
 
-@Injectable()
 export class CarsAPIService {
   getAll(): Observable<Car[]> {
     return Observable.of(carData);

@@ -1,5 +1,4 @@
 .home-container {
-  max-width: 1200px;
   margin-top: 50px;
   margin-bottom: 100px;
 }
@@ -9,13 +8,9 @@
   bottom: 0;
   z-index: 2;
   width: 100%;
+  box-shadow:0 0 10px 1px #CCC;
 
   &__btn-remove {
     line-height: 19px;
   }
-}
-
-.compared-container {
-  max-width: 1200px;
-  margin: 0 auto;
 }

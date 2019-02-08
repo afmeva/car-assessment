@@ -6,6 +6,7 @@ import { forkJoin } from "rxjs/observable/forkJoin";
 import { CarsAPIService } from "../../core/services/cars-api.service";
 import { Car } from "../../core/models/car.model";
 import { Observable } from "rxjs/Observable";
+import { WindowService } from "../../core/services/window.service";
 
 @Component({
   selector: "app-compare-cars",
@@ -15,9 +16,11 @@ import { Observable } from "rxjs/Observable";
 export class CompareCarsComponent implements OnInit {
   carsToCompare: Observable<Car[]>;
 
-  constructor(private route: ActivatedRoute, private carsApi: CarsAPIService) {}
+  constructor(private route: ActivatedRoute, private carsApi: CarsAPIService, private windowService: WindowService) {}
 
   ngOnInit() {
+    this.windowService.getWindow().scrollTo(0, 0);
+
     this.carsToCompare = this.route.queryParams.pipe(
       switchMap(({ cars = [] }) => {
         const cleanArray = cars.reduce(

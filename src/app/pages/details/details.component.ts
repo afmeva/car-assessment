@@ -6,6 +6,7 @@ import { shareReplay } from "rxjs/operators/shareReplay";
 
 import { CarsAPIService } from "../../core/services/cars-api.service";
 import { Car } from "../../core/models/car.model";
+import { WindowService } from "../../core/services/window.service";
 
 @Component({
   selector: "app-details",
@@ -14,9 +15,11 @@ import { Car } from "../../core/models/car.model";
 })
 export class DetailsComponent implements OnInit {
   car: Observable<Car>;
-  constructor(private route: ActivatedRoute, private carApi: CarsAPIService) {}
+  constructor(private route: ActivatedRoute, private carApi: CarsAPIService, private windowService: WindowService) {}
 
   ngOnInit() {
+    this.windowService.getWindow().scrollTo(0,0);
+    
     this.car = this.route.params.pipe(
       switchMap(({ id }) => this.carApi.getById(id)),
       shareReplay(1)
