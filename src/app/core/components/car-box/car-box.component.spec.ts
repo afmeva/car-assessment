@@ -5,7 +5,7 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { ActivatedRoute } from "@angular/router";
 import { Observable } from "rxjs/Observable";
 
-fdescribe("CarBoxComponent", () => {
+describe("CarBoxComponent", () => {
   let component: CarBoxComponent;
   let fixture: ComponentFixture<CarBoxComponent>;
 

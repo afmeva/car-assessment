@@ -6,55 +6,13 @@ import { Observable } from "rxjs/Observable";
 import { Component, Input } from "@angular/core";
 import { RouterTestingModule } from "@angular/router/testing";
 
+import mockData from "../../specs-mocks/cars.mock";
+
 describe("HomeComponent", () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
   let carsApi: CarsAPIService;
 
-  const mockData = [
-    {
-      id: "38e87c73-1dfe-4f81-9dcc-cf54fc92dce5",
-      images: {
-        small: "",
-        big: ""
-      },
-      model: "626",
-      year: 1985,
-      brand: "Mazda",
-      price: 72061,
-      features: [
-        {
-          headline: "General Manager",
-          text: "extend efficient relationships"
-        },
-        {
-          headline: "Administrative Officer",
-          text: "whiteboard 24/365 markets"
-        }
-      ]
-    },
-    {
-      id: "38e87c73-1dfe-4f81-9dcc-cf54fc92dce5",
-      images: {
-        small: "",
-        big: ""
-      },
-      model: "626",
-      year: 1985,
-      brand: "Pontiac",
-      price: 72061,
-      features: [
-        {
-          headline: "General Manager",
-          text: "extend efficient relationships"
-        },
-        {
-          headline: "Administrative Officer",
-          text: "whiteboard 24/365 markets"
-        }
-      ]
-    }
-  ];
 
   @Component({
     selector: "app-car-box",
