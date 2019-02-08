@@ -8,6 +8,7 @@ import { Observable } from "rxjs/Observable";
 import { ActivatedRoute } from "@angular/router";
 
 import mockData from "../../specs-mocks/cars.mock";
+import { WindowService } from "../../core/services/window.service";
 
 @Component({
   selector: "app-navbar",
@@ -36,6 +37,7 @@ describe("CompareCarsComponent", () => {
         CompareCarsComponent
       ],
       providers: [
+        WindowService,
         {
           provide: CarsAPIService,
           useValue: {

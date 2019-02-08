@@ -5,6 +5,7 @@ import { Component, Input } from "@angular/core";
 import { RouterTestingModule } from "@angular/router/testing";
 import { CarsAPIService } from "../../core/services/cars-api.service";
 import { Observable } from "rxjs/Observable";
+import { WindowService } from "../../core/services/window.service";
 
 describe("DetailsComponent", () => {
   let component: DetailsComponent;
@@ -33,6 +34,7 @@ describe("DetailsComponent", () => {
         CarDetailsStubComponent,
       ],
       providers: [
+        WindowService,
         {
           provide: CarsAPIService,
           useValue: jasmine.createSpyObj({
